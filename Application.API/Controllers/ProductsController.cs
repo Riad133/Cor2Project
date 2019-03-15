@@ -26,7 +26,24 @@ namespace Application.API.Controllers
             return Ok(ProductHelper.GetProduct(id));
         }
 
-        // POST: api/Product
+        /// <summary>
+        /// Creates a Product.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Product
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "description": "Description"
+        ///     }
+        /// </remarks>
+        /// <param name="product"></param>
+        /// <returns>A newly created product</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response> 
+
         [HttpPost]
         public IActionResult Post([FromBody] Product product)
         {
